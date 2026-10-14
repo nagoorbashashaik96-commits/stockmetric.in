@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rossari Biotech - stockmetric.in</title>
+  <style>
+    :root {
+      --primary: #0284c7;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #cbd5e1;
+      --text-dark: #0f172a;
+      --text-muted: #64748b;
+      --bar-parent: #0284c7;
+      --bar-subs: #0d9488;
+      --bar-other: #e11d48;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      margin: 0;
+      padding: 12px;
+      color: var(--text-dark);
+      font-size: 13px;
+    }
+
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 12px;
+    }
+    .back-btn { text-decoration: none; color: var(--primary); font-weight: 600; }
+    .brand-tag { font-weight: 800; color: var(--primary); font-size: 16px; }
+
+    .card {
+      background: var(--card-bg);
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      margin-bottom: 14px;
+    }
+
+    .company-title { margin: 0; font-size: 18px; font-weight: 700; }
+    .company-sub { color: var(--text-muted); font-size: 12px; margin-top: 2px; }
+
+    /* Key Metrics Grid */
+    .ratio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+    .ratio-label { font-size: 11px; color: var(--text-muted); display: block; }
+    .ratio-val { font-size: 13px; font-weight: 700; font-family: monospace; }
+
+    /* Business Verticals Grid */
+    .vertical-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
+    .vertical-item { background: #f1f5f9; padding: 10px; border-radius: 6px; font-size: 12px; border: 1px solid var(--border); }
+
+    /* Waterfall Chart Component */
+    .waterfall-container { margin-top: 10px; }
+    .wf-step { margin-bottom: 10px; }
+    .wf-label { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 3px; font-weight: 600; }
+    .wf-bar-bg { background: #e2e8f0; height: 16px; border-radius: 4px; overflow: hidden; }
+    .wf-bar-fill { height: 100%; border-radius: 4px; }
+
+    /* Entity Tree Flowchart */
+    .tree-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 10px;
+      text-align: center;
+    }
+    .tree-node {
+      background: #f1f5f9;
+      border: 1px solid var(--border);
+      padding: 10px 6px;
+      border-radius: 6px;
+      font-size: 11px;
+    }
+    .tree-parent {
+      background: #e0f2fe;
+      border-color: #0284c7;
+      grid-column: span 3;
+      margin-bottom: 6px;
+    }
+
+    /* Stacked Contribution Bars */
+    .contrib-block { margin-bottom: 14px; }
+    .contrib-header { display: flex; justify-content: space-between; font-size: 12px; font-weight: 600; margin-bottom: 4px; }
+    .bar-bg { background: #e2e8f0; height: 22px; border-radius: 4px; overflow: hidden; display: flex; }
+    .bar-part1 { background: var(--bar-parent); color: white; text-align: center; font-size: 10px; line-height: 22px; font-weight: bold; }
+    .bar-part2 { background: var(--bar-subs); color: white; text-align: center; font-size: 10px; line-height: 22px; font-weight: bold; }
+
+    /* Screener Financial Table */
+    .table-container { overflow-x: auto; margin-top: 8px; }
+    table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    th { background: #f1f5f9; text-align: right; padding: 8px; border-bottom: 2px solid var(--border); }
+    td { padding: 8px; border-bottom: 1px solid var(--border); text-align: right; font-family: monospace; }
+    th:first-child, td:first-child { text-align: left; font-family: inherit; font-weight: 600; }
+
+    .strike-text { text-decoration: line-through; color: var(--text-muted); }
+    .bold-val { font-weight: bold; color: var(--primary); }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <div class="top-nav">
+    <a href="index.html" class="back-btn">← Search</a>
+    <span class="brand-tag">stockmetric.in</span>
+  </div>
+
+  <!-- Company Header Card -->
+  <div class="card">
+    <h1 class="company-title">Rossari Biotech Limited 🧪</h1>
+    <div class="company-sub">NSE: ROSSARI | Specialty Chemicals | Founded: 2003</div>
+
+    <div class="ratio-grid">
+      <div><span class="ratio-label">Core Revenue</span><span class="ratio-val">₹1,850.5 Cr</span></div>
+      <div><span class="ratio-label">Core EBITDA</span><span class="ratio-val">₹225.3 Cr</span></div>
+      <div><span class="ratio-label">Core PAT (Est)</span><span class="ratio-val">₹122.6 Cr</span></div>
+      <div><span class="ratio-label">Other Income Excluded</span><span class="ratio-val strike-text">₹27.0 Cr</span></div>
+      <div><span class="ratio-label">Subs EBITDA Share</span><span class="ratio-val">60.0%</span></div>
+      <div><span class="ratio-label">Subs PAT Share</span><span class="ratio-val">58.0%</span></div>
+    </div>
+  </div>
+
+  <!-- Business Verticals -->
+  <div class="card">
+    <div style="font-weight:700; font-size:14px; margin-bottom:8px;">🔬 Core Business Verticals</div>
+    <div class="vertical-grid">
+      <div class="vertical-item"><b>🧼 Surfactants</b><br><small>Cleaning agents & agrochemical formulations</small></div>
+      <div class="vertical-item"><b>🧪 Polymers</b><br><small>Polyacrylates & performance enhancers</small></div>
+      <div class="vertical-item"><b>💧 Silicones</b><br><small>Textile softeners & industrial defoamers</small></div>
+      <div class="vertical-item"><b>🧬 Enzymes</b><br><small>Sustainable bio-processing solutions</small></div>
+    </div>
+  </div>
+
+  <!-- Future Vision -->
+  <div class="card">
+    <div style="font-weight:700; font-size:14px; margin-bottom:6px;">🌱 Future Vision</div>
+    <p style="font-size: 12px; color: var(--text-muted); margin: 0;">Focusing on <b>Bio-Surfactants & Green Chemistry</b> innovations to replace harsh chemicals and fulfill global ESG standards with zero liquid discharge.</p>
+  </div>
+
+  <!-- Promoters & University Qualifications -->
+  <div class="card">
+    <div style="font-weight:700; font-size:14px; margin-bottom:8px;">👨‍💼 Key Promoters & Founders</div>
+    <p style="font-size: 12px; margin: 6px 0;">
+      <strong>Mr. Edward Menezes</strong> (Executive Chairman & Co-Founder)<br>
+      <span style="color: var(--text-muted);">🎓 B.Sc. Chemistry (K. J. Somaiya, Univ. of Bombay) | B.Sc. Tech (UDCT, Mumbai) | M.M.M. (Welingkar)</span>
+    </p>
+    <p style="font-size: 12px; margin: 10px 0 0 0;">
+      <strong>Mr. Sunil Chari</strong> (Managing Director & Co-Founder)<br>
+      <span style="color: var(--text-muted);">🎓 B.A. (Kakatiya University) | Diploma in Tech & Applied Chemistry (VJTI, Mumbai)</span>
+    </p>
+  </div>
+
+  <!-- P&L Waterfall Bridge -->
+  <div class="card">
+    <div style="font-weight:700; font-size:14px; margin-bottom:8px;">📉 P&L Waterfall Bridge (Other Income Stripped Out)</div>
+
+    <div class="waterfall-container">
+      <div class="wf-step">
+        <div class="wf-label"><span>1. Total Reported Consolidated Revenue</span><span>₹1,877.5 Cr</span></div>
+        <div class="wf-bar-bg"><div class="wf-bar-fill" style="width: 100%; background: #94a3b8;"></div></div>
+      </div>
+
+      <div class="wf-step">
+        <div class="wf-label"><span>2. Excluded Other Income (Non-Operating)</span><span class="strike-text">-₹27.0 Cr</span></div>
+        <div class="wf-bar-bg"><div class="wf-bar-fill" style="width: 14.4%; background: var(--bar-other);"></div></div>
+      </div>
+
+      <div class="wf-step">
+        <div class="wf-label"><span>3. Pure Core Operating Revenue</span><span>₹1,850.5 Cr</span></div>
+        <div class="wf-bar-bg"><div class="wf-bar-fill" style="width: 98.5%; background: var(--bar-parent);"></div></div>
+      </div>
+
+      <div class="wf-step">
+        <div class="wf-label"><span>4. Core Operating EBITDA</span><span>₹225.3 Cr (12.17%)</span></div>
+        <div class="wf-bar-bg"><div class="wf-bar-fill" style="width: 12.2%; background: var(--bar-subs);"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Standalone vs Subsidiaries & JVs Split (Revenue, EBITDA, PAT) -->
+  <div class="card">
+    <div style="font-weight:700; font-size:14px; margin-bottom:12px;">🏢 Consolidated vs. Standalone Contribution Pictographs</div>
+
+    <!-- 1. Revenue Contribution Bar -->
+    <div class="contrib-block">
+      <div class="contrib-header">
+        <span>Revenue Contribution</span>
+        <span>Standalone: ₹795.7 Cr (43%) | Subs & JVs: ₹1,054.8 Cr (57%)</span>
+      </div>
+      <div class="bar-bg">
+        <div class="bar-part1" style="width: 43%;">Standalone 43%</div>
+        <div class="bar-part2" style="width: 57%;">Subs & JVs 57%</div>
+      </div>
+    </div>
+
+    <!-- 2. EBITDA Contribution Bar -->
+    <div class="contrib-block">
+      <div class="contrib-header">
+        <span>EBITDA Profit Contribution</span>
+        <span>Standalone: ₹90.1 Cr (40%) | Subs & JVs: ₹135.2 Cr (60%)</span>
+      </div>
+      <div class="bar-bg">
+        <div class="bar-part1" style="width: 40%;">Standalone 40%</div>
+        <div class="bar-part2" style="width: 60%;">Subs & JVs 60%</div>
+      </div>
+    </div>
+
+    <!-- 3. Net Profit (PAT) Contribution Bar -->
+    <div class="contrib-block" style="margin-bottom:0;">
+      <div class="contrib-header">
+        <span>Net Profit (PAT) Contribution</span>
+        <span>Standalone: ₹51.5 Cr (42%) | Subs & JVs: ₹71.1 Cr (58%)</span>
+      </div>
+      <div class="bar-bg">
+        <div class="bar-part1" style="width: 42%;">Standalone 42%</div>
+        <div class="bar-part2" style="width: 58%;">Subs & JVs 58%</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Corporate Structure Flowchart Tree -->
+  <div class="card">
+    <div style="font-weight:700; font-size:14px; margin-bottom:8px;">🌳 Corporate Entity Structure Flowchart</div>
+    
+    <div class="tree-grid">
+      <div class="tree-node tree-parent">
+        <strong>Rossari Biotech Ltd. (Parent Standalone)</strong><br>
+        Rev: ₹795.7 Cr (43%) | EBITDA: ₹90.1 Cr (40%) | PAT: ₹51.5 Cr (42%)
+      </div>
+      
+      <div class="tree-node">
+        <strong>Unitop Chemicals</strong><br>
+        100% Subs<br>
+        Rev Share: ~38%<br>
+        EBITDA Share: ~42%
+      </div>
+      
+      <div class="tree-node">
+        <strong>Tristar Intermed.</strong><br>
+        100% Subs<br>
+        Rev Share: ~12%<br>
+        EBITDA Share: ~11%
+      </div>
+
+      <div class="tree-node">
+        <strong>Buzil & JVs</strong><br>
+        Joint Ventures<br>
+        Rev Share: ~7%<br>
+        EBITDA Share: ~7%
+      </div>
+    </div>
+  </div>
+
+  <!-- 4-Quarter Screener Table -->
+  <div class="card">
+    <div style="font-weight:700; font-size:14px; margin-bottom:8px;">📊 4-Quarter Performance Breakdown</div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Line Item (₹ Cr)</th>
+            <th>Q1</th>
+            <th>Q2</th>
+            <th>Q3</th>
+            <th>Q4</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Operating Revenue</td>
+            <td>489.70</td>
+            <td>498.40</td>
+            <td>512.70</td>
+            <td>579.60</td>
+          </tr>
+          <tr class="strike-text">
+            <td>Other Income (Excluded)</td>
+            <td>5.20</td>
+            <td>6.10</td>
+            <td>6.80</td>
+            <td>8.40</td>
+          </tr>
+          <tr class="bold-val">
+            <td>Core Operating EBITDA</td>
+            <td>64.90</td>
+            <td>65.90</td>
+            <td>64.80</td>
+            <td>69.50</td>
+          </tr>
+          <tr>
+            <td>EBITDA Contribution (Subs Share)</td>
+            <td>38.90 (60%)</td>
+            <td>39.50 (60%)</td>
+            <td>38.80 (60%)</td>
+            <td>41.70 (60%)</td>
+          </tr>
+          <tr>
+            <td>Net Profit (PAT) Core</td>
+            <td>35.10</td>
+            <td>36.20</td>
+            <td>34.80</td>
+            <td>36.70</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</body>
+</html>
