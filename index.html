@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StockMetric.in - Pure Core Financials</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f8f9fa;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 90vh;
+      text-align: center;
+    }
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #0f172a;
+      margin-bottom: 5px;
+    }
+    .tagline {
+      color: #64748b;
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+    .search-box {
+      width: 100%;
+      max-width: 500px;
+      padding: 14px 20px;
+      font-size: 16px;
+      border: 2px solid #cbd5e1;
+      border-radius: 12px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .search-box:focus {
+      border-color: #2563eb;
+    }
+    .nav-links {
+      margin-top: 25px;
+    }
+    .nav-links a {
+      text-decoration: none;
+      background: #2563eb;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 14px;
+      box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+    }
+    .nav-links a:hover {
+      background: #1d4ed8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo">📊 stockmetric.in</div>
+  <div class="tagline">Core Operating Profits & Subsidiary Breakdown for Indian Stocks</div>
+
+  <!-- Search Bar -->
+  <input type="text" class="search-box" placeholder="Search company (e.g., Rossari Biotech)..." id="searchBar">
+
+  <!-- Sample Company Link -->
+  <div class="nav-links">
+    <a href="rossari.html">📈 View Sample Company (Rossari)</a>
+  </div>
+
+  <script>
+    const searchBar = document.getElementById('searchBar');
+    searchBar.addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') {
+        let query = searchBar.value.trim().toLowerCase();
+        if(query.includes('rossari')) {
+          window.location.href = 'rossari.html';
+        } else {
+          alert('Company profile coming soon! Try typing "Rossari"');
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
