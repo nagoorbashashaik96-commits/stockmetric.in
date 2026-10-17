@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>stockmetric.in - Pure Core Operating Profits</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f8fafc;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 90vh;
+      text-align: center;
+    }
+    .brand-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+    }
+    .brand-title {
+      font-size: 32px;
+      font-weight: 800;
+      color: #0284c7;
+      letter-spacing: -0.5px;
+    }
+    .tagline {
+      color: #64748b;
+      font-size: 14px;
+      max-width: 450px;
+      margin-bottom: 25px;
+      line-height: 1.4;
+    }
+    .search-container {
+      width: 100%;
+      max-width: 480px;
+      position: relative;
+    }
+    .search-box {
+      width: 100%;
+      padding: 14px 16px 14px 45px;
+      font-size: 15px;
+      border: 2px solid #cbd5e1;
+      border-radius: 12px;
+      outline: none;
+      box-sizing: border-box;
+      transition: all 0.2s;
+      background: white;
+    }
+    .search-box:focus {
+      border-color: #0284c7;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15);
+    }
+    .search-icon-inside {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      fill: #64748b;
+    }
+    .nav-links {
+      margin-top: 25px;
+    }
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      background: #0284c7;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: 0 4px 10px rgba(2, 132, 199, 0.25);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Copyright-Free StockMetric Logo SVG -->
+  <div class="brand-header">
+    <svg class="logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="42" cy="42" r="32" stroke="#0284c7" stroke-width="8"/>
+      <path d="M22 55 L34 42 L46 48 L62 28" stroke="#10b981" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M52 28 H62 V38" stroke="#10b981" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="64" y1="64" x2="88" y2="88" stroke="#0284c7" stroke-width="10" stroke-linecap="round"/>
+    </svg>
+    <div class="brand-title">stockmetric.in</div>
+  </div>
+
+  <div class="tagline">Pure Operating Profits (Ex-Other Income) & Consolidated vs. Standalone Breakdowns</div>
+
+  <!-- Search Bar with Vector Icon -->
+  <div class="search-container">
+    <svg class="search-icon-inside" viewBox="0 0 24 24">
+      <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+    </svg>
+    <input type="text" class="search-box" placeholder="Search stock (e.g. Rossari Biotech)..." id="searchBar">
+  </div>
+
+  <!-- Direct Link to Rossari -->
+  <div class="nav-links">
+    <a href="rossari.html" class="nav-btn">
+      🧪 View Rossari Biotech (4-Quarter Results)
+    </a>
+  </div>
+
+  <script>
+    const searchBar = document.getElementById('searchBar');
+    searchBar.addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') {
+        let query = searchBar.value.trim().toLowerCase();
+        if(query.includes('rossari')) {
+          window.location.href = 'rossari.html';
+        } else {
+          alert('Company profile coming soon! Search "Rossari"');
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
