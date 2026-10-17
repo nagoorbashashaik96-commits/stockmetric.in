@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rossari Biotech - stockmetric.in</title>
+  <style>
+    :root {
+      --primary: #0284c7;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+      --text-dark: #0f172a;
+      --text-muted: #64748b;
+      --green: #16a34a;
+      --red: #dc2626;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+      background: var(--bg);
+      margin: 0;
+      padding: 12px;
+      color: var(--text-dark);
+      font-size: 13px;
+    }
+
+    /* Top Navigation */
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 12px;
+    }
+    .back-btn { text-decoration: none; color: var(--primary); font-weight: 600; font-size: 13px; }
+    .brand-tag { font-weight: 800; color: var(--primary); font-size: 15px; }
+
+    /* Screener Header Card */
+    .company-card {
+      background: var(--card-bg);
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      margin-bottom: 12px;
+    }
+    .company-header { display: flex; align-items: center; gap: 12px; }
+    .logo-badge {
+      width: 44px; height: 44px; background: var(--primary); color: white;
+      border-radius: 6px; display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 18px;
+    }
+    .company-title { margin: 0; font-size: 18px; font-weight: 700; color: var(--text-dark); }
+    .company-sub { color: var(--text-muted); font-size: 12px; margin-top: 2px; }
+
+    /* Screener Key Ratio Grid */
+    .ratio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--border);
+    }
+    .ratio-box { text-align: left; }
+    .ratio-label { font-size: 11px; color: var(--text-muted); display: block; }
+    .ratio-value { font-size: 14px; font-weight: 700; color: var(--text-dark); font-family: monospace; }
+
+    /* Navigation Tabs */
+    .tabs {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      margin-bottom: 12px;
+      padding-bottom: 4px;
+    }
+    .tab {
+      padding: 6px 12px;
+      background: #e2e8f0;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .tab.active { background: var(--primary); color: white; }
+
+    /* Section Cards */
+    .section-card {
+      background: var(--card-bg);
+      padding: 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-top: 0;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Screener Pros/Cons Component */
+    .pros-cons-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+    .pro-box { background: #f0fdf4; border-left: 3px solid var(--green); padding: 8px 10px; border-radius: 4px; font-size: 12px; }
+    .con-box { background: #fef2f2; border-left: 3px solid var(--red); padding: 8px 10px; border-radius: 4px; font-size: 12px; }
+
+    /* Clean Screener Table */
+    .table-responsive { overflow-x: auto; margin-top: 8px; }
+    table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    th { background: #f1f5f9; color: var(--text-muted); font-weight: 600; text-align: right; padding: 8px; border-bottom: 2px solid var(--border); }
+    td { padding: 8px; border-bottom: 1px solid var(--border); text-align: right; font-family: monospace; }
+    th:first-child, td:first-child { text-align: left; font-family: inherit; font-weight: 600; }
+    tr:hover { background: #f8fafc; }
+    .strike-red { color: var(--red); text-decoration: line-through; }
+    .bold-green { color: var(--green); font-weight: bold; }
+
+    /* Visual Contribution Bar */
+    .bar-bg { background: #e2e8f0; height: 20px; border-radius: 4px; overflow: hidden; display: flex; margin-top: 6px; }
+    .bar-part1 { background: var(--primary); color: white; text-align: center; font-size: 10px; line-height: 20px; font-weight: bold; }
+    .bar-part2 { background: var(--green); color: white; text-align: center; font-size: 10px; line-height: 20px; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <!-- Top Brand Navigation -->
+  <div class="top-nav">
+    <a href="index.html" class="back-btn">← Search</a>
+    <span class="brand-tag">stockmetric.in</span>
+  </div>
+
+  <!-- Header Card with Key Ratio Matrix -->
+  <div class="company-card">
+    <div class="company-header">
+      <div class="logo-badge">RB</div>
+      <div>
+        <h1 class="company-title">Rossari Biotech Ltd.</h1>
+        <div class="company-sub">NSE: ROSSARI | Specialty Chemicals</div>
+      </div>
+    </div>
+
+    <!-- Screener-Style Key Financial Ratios -->
+    <div class="ratio-grid">
+      <div class="ratio-box">
+        <span class="ratio-label">Core EBITDA %</span>
+        <span class="ratio-value">12.17%</span>
+      </div>
+      <div class="ratio-box">
+        <span class="ratio-label">Ex-Other Inc PBT</span>
+        <span class="ratio-value">₹164 Cr</span>
+      </div>
+      <div class="ratio-box">
+        <span class="ratio-label">Subs Share %</span>
+        <span class="ratio-value">57.0%</span>
+      </div>
+      <div class="ratio-box">
+        <span class="ratio-label">Other Income Share</span>
+        <span class="ratio-value strike-red">14.2%</span>
+      </div>
+      <div class="ratio-box">
+        <span class="ratio-label">Standalone Rev</span>
+        <span class="ratio-value">₹795 Cr</span>
+      </div>
+      <div class="ratio-box">
+        <span class="ratio-label">Subsidiary Rev</span>
+        <span class="ratio-value">₹1,054 Cr</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabs Navigation -->
+  <div class="tabs">
+    <div class="tab active">Overview</div>
+    <div class="tab">Quarters</div>
+    <div class="tab">Subsidiaries</div>
+    <div class="tab">Management</div>
+  </div>
+
+  <!-- StockMetric Snapshot (Pros & Cons) -->
+  <div class="section-card">
+    <div class="section-title">⚡ StockMetric Quality X-Ray</div>
+    <div class="pros-cons-grid">
+      <div class="pro-box">
+        <strong>High Subsidiary Contribution:</strong> Subsidiaries (Unitop, Tristar) drive 57% of operating revenue and ~58% of EBITDA.
+      </div>
+      <div class="con-box">
+        <strong>Non-Operating Income Alert:</strong> ~14.2% of reported profit before tax comes from Other Income (Excluded from Core metrics).
+      </div>
+    </div>
+  </div>
+
+  <!-- 4-Quarter Screener Table -->
+  <div class="section-card">
+    <div class="section-title">📊 Quarterly Core Performance (Ex-Other Income)</div>
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>Line Item (₹ Cr)</th>
+            <th>Q1</th>
+            <th>Q2</th>
+            <th>Q3</th>
+            <th>Q4</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Operating Revenue</td>
+            <td>489.70</td>
+            <td>498.40</td>
+            <td>512.70</td>
+            <td>579.60</td>
+          </tr>
+          <tr class="strike-red">
+            <td>Other Income (Excluded)</td>
+            <td>5.20</td>
+            <td>6.10</td>
+            <td>6.80</td>
+            <td>8.40</td>
+          </tr>
+          <tr class="bold-green">
+            <td>Core Operating EBITDA</td>
+            <td>64.90</td>
+            <td>65.90</td>
+            <td>64.80</td>
+            <td>69.50</td>
+          </tr>
+          <tr>
+            <td>Core EBITDA Margin %</td>
+            <td>13.25%</td>
+            <td>13.22%</td>
+            <td>12.63%</td>
+            <td>11.99%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Subsidiary vs Standalone Visual Breakdown -->
+  <div class="section-card">
+    <div class="section-title">🏢 Corporate Structure Split</div>
+    <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 6px;">Consolidated Revenue vs Standalone Business:</div>
+    <div class="bar-bg">
+      <div class="bar-part1" style="width: 43%;">Standalone 43%</div>
+      <div class="bar-part2" style="width: 57%;">Subsidiaries 57%</div>
+    </div>
+  </div>
+
+  <!-- Management Info -->
+  <div class="section-card">
+    <div class="section-title">👨‍💼 Promoters & Leadership</div>
+    <p style="margin: 4px 0; font-size: 12px;"><strong>Mr. Edward Menezes</strong> — Co-Founder & Executive Chairman<br><span style="color: var(--text-muted);">B.Sc. Tech (ICT, Mumbai), M.M.M. (Welingkar)</span></p>
+    <p style="margin: 8px 0 0 0; font-size: 12px;"><strong>Mr. Sunil Chari</strong> — Co-Founder & Managing Director<br><span style="color: var(--text-muted);">Diploma in Tech & Applied Chem (VJTI, Mumbai)</span></p>
+  </div>
+
+</body>
+</html>
